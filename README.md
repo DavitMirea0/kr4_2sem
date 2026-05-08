@@ -90,10 +90,7 @@ npm run start:3002
 Nginx (порт 80): `sudo nginx -c $(pwd)/nginx/nginx.conf`  
 HAProxy (порт 8080): `docker run -d --network host -v $(pwd)/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg haproxy:2.8`
 
-### Пр23 (Docker Compose)
-
 ## Процесс установки Docker если он отсуствует
-
 # Обновляем индекс пакетов
 sudo apt update
 # Устанавливаем необходимые пакеты для работы с репозиториями по HTTPS
@@ -113,7 +110,7 @@ sudo apt update
 # Устанавливаем Docker Engine, Containerd и Docker Compose Plugin
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin
 docker-compose-plugin
-
+### Пр23 (Docker Compose)
 ## Запуск
 ```bash
 cd pr23
