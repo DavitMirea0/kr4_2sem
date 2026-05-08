@@ -102,8 +102,7 @@ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 # Добавляем репозиторий Docker в источники APT
 echo \
-"deb [arch=$(dpkg --print-architecture) signedby=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+"deb [arch=$(dpkg --print-architecture) signedby=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 # Снова обновляем индекс пакетов
 sudo apt update
