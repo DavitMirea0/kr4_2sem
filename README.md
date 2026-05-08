@@ -90,34 +90,33 @@ npm run start:3002
 Nginx (порт 80): `sudo nginx -c $(pwd)/nginx/nginx.conf`  
 HAProxy (порт 8080): `docker run -d --network host -v $(pwd)/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg haproxy:2.8`
 
-## Процесс установки Docker если он отсуствует
-# Обновляем индекс пакетов
+# Процесс установки Docker если он отсуствует
+## Обновляем индекс пакетов
 sudo apt update
-# Устанавливаем необходимые пакеты для работы с репозиториями по HTTPS
+## Устанавливаем необходимые пакеты для работы с репозиториями по HTTPS
 sudo apt install -y ca-certificates curl
-# Создаем директорию для ключей и добавляем официальный GPG-ключ Docker
+## Создаем директорию для ключей и добавляем официальный GPG-ключ Docker
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o
 /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
-# Добавляем репозиторий Docker в источники APT
+### Добавляем репозиторий Docker в источники APT
 echo \
 "deb [arch=$(dpkg --print-architecture) signedby=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-# Снова обновляем индекс пакетов
+### Снова обновляем индекс пакетов
 sudo apt update
-# Устанавливаем Docker Engine, Containerd и Docker Compose Plugin
+### Устанавливаем Docker Engine, Containerd и Docker Compose Plugin
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin
 docker-compose-plugin
-### Пр23 (Docker Compose)
-## Запуск
+# Пр23 (Docker Compose)
+### Запуск
 ```bash
 cd pr23
 docker compose up --build
 ```
 
-Приложение: curl http://localhost/ && echo "" - для Windows Subsystem for Linux(WSL) - для Практик 22 и 23
-
+Приложение: curl http://localhost/ && echo "" - для Windows Subsystem for Linux(WSL)
 ## Что реализовано
 
 ### Пр19 — PostgreSQL + Sequelize
